@@ -1,3 +1,7 @@
+###############################
+##### Python Password Gen #####
+###############################
+
 import string, random, argparse
 
 parser = argparse.ArgumentParser(description='Strong Password Generator')
