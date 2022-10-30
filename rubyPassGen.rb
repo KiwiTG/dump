@@ -1,3 +1,7 @@
+#############################
+##### Ruby Password Gen #####
+#############################
+
 require 'securerandom'
 
 print "Enter Password Length |> "
