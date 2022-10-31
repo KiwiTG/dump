@@ -17,29 +17,28 @@ if platform.system() == 'Linux':
 else:
     exit()
 
-if __name__ == '__main__':
-    while True:
+while True:
+    clear()
+    num = randint(1, 100)
+    nmin = num - randint(1, 10)
+    nmax = num + randint(1, 10)
+    print(f"Correct: {cor}")
+    print(f"Incorrect: {inc}")
+    try:
+        guess = int(input(f"Guess the number between {nmin} and {nmax} > "))
+    except:
         clear()
-        num = randint(1, 100)
-        nmin = num - randint(1, 10)
-        nmax = num + randint(1, 10)
-        print(f"Correct: {cor}")
-        print(f"Incorrect: {inc}")
-        try:
-            guess = int(input(f"Guess the number between {nmin} and {nmax} > "))
-        except:
-            clear()
 
-        if guess < nmin or guess > nmax:
-            print("Out of range!")
-            time.sleep(1)
-            os.system('clear')
+    if guess < nmin or guess > nmax:
+        print("Out of range!")
+        time.sleep(1)
+        os.system('clear')
 
-        if guess == num:
-            print("You guessed correctly!")
-            time.sleep(2)
-            cor += 1
-        else:
-            print("You guessed incorrectly!")
-            time.sleep(2)
-            inc += 1
+    if guess == num:
+        print("You guessed correctly!")
+        time.sleep(2)
+        cor += 1
+    else:
+        print("You guessed incorrectly!")
+        time.sleep(2)
+        inc += 1
