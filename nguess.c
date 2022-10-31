@@ -33,25 +33,25 @@ void game() {
         scanf("%d", &guess);
 
         if (guess < nmin) {
-            printf("Out of range!\n");
+            printf("Out of range, too low!\n");
             sleep(1);
             incorrect++;
             system("clear");
 
         } else if (guess > nmax) {
-            printf("Out of range!\n");
+            printf("Out of range, too high!\n");
             sleep(1);
             incorrect++;
             system("clear");
         }
 
         if (guess > answer) {
-            printf("You guessed incorrectly!\n");
+            printf("You guessed incorrectly, too high!\n");
             sleep(1);
             incorrect++;
             system("clear");
         } else if (guess < answer) {
-            printf("You guessed incorrectly!\n");
+            printf("You guessed incorrectly, too low!\n");
             sleep(1);
             incorrect++;
             system("clear");
