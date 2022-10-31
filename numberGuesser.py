@@ -5,9 +5,6 @@
 from random import *
 import os, time, platform
 
-cor = 0
-inc = 0
-
 if platform.system() == 'Windows':
     def clear():
         os.system('cls')
@@ -17,28 +14,54 @@ if platform.system() == 'Linux':
 else:
     exit()
 
-while True:
-    clear()
-    num = randint(1, 100)
-    nmin = num - randint(1, 10)
-    nmax = num + randint(1, 10)
-    print(f"Correct: {cor}")
-    print(f"Incorrect: {inc}")
-    try:
-        guess = int(input(f"Guess the number between {nmin} and {nmax} > "))
-    except:
+def game():
+
+    cor = 0
+    inc = 0
+
+    answer = randint(1, 100)
+    nmin = answer - randint(1, 10)
+    nmax = answer + randint(1, 10)
+
+    while True:
         clear()
 
-    if guess < nmin or guess > nmax:
-        print("Out of range!")
-        time.sleep(1)
-        os.system('clear')
+        print(f"Correct: {cor}")
+        print(f"Incorrect: {inc}")
 
-    if guess == num:
-        print("You guessed correctly!")
-        time.sleep(2)
-        cor += 1
-    else:
-        print("You guessed incorrectly!")
-        time.sleep(2)
-        inc += 1
+        try:
+            guess = int(input(f"Guess the number between {nmin} and {nmax} > "))
+        except:
+            clear()
+
+        if guess < nmin:
+            print("Out of range, too low!")
+            time.sleep(1)
+            clear()
+
+        if guess > nmax:
+            print("Out of range, too high!")
+            time.sleep(1)
+            clear()
+
+        if guess > answer:
+            print("You guessed incorrectly, too high!")
+            time.sleep(1)
+            inc += 1
+            clear()
+    
+        if guess < answer:
+            print("You guessed incorrectly, too low!")
+            time.sleep(1)
+            inc += 1
+            clear()
+
+        if guess == answer:
+            print("You guessed correctly!")
+            time.sleep(2)
+            cor += 1
+            clear()
+            break
+
+while True:
+    game()
