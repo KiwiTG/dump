@@ -29,35 +29,35 @@ void game() {
 
         printf("Correct: %d", correct);
         printf("\nIncorrect: %d", incorrect);
-        printf("\nGuess a number between %d and %d: ", nmin, nmax);
+        printf("\nGuess the number between %d and %d: ", nmin, nmax);
         scanf("%d", &guess);
 
         if (guess < nmin) {
-            printf("Out of range, too low!\n");
+            printf("Out of range, too low!");
             sleep(1);
             incorrect++;
             system("clear");
 
         } else if (guess > nmax) {
-            printf("Out of range, too high!\n");
+            printf("Out of range, too high!");
             sleep(1);
             incorrect++;
             system("clear");
         }
 
         if (guess > answer) {
-            printf("You guessed incorrectly, too high!\n");
+            printf("You guessed incorrectly, too high!");
             sleep(1);
             incorrect++;
             system("clear");
         } else if (guess < answer) {
-            printf("You guessed incorrectly, too low!\n");
+            printf("You guessed incorrectly, too low!");
             sleep(1);
             incorrect++;
             system("clear");
         } else {
-            printf("You guessed correctly!\n");
-            sleep(1);
+            printf("You guessed correctly!");
+            sleep(2);
             correct++;
             system("clear");
 
